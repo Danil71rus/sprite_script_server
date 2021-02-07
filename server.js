@@ -1,12 +1,14 @@
+const ip = require('ip');
 const cors = require("cors");
 const express = require("express");
 const history = require('connect-history-api-fallback');
-const os = require("os");
 const path = require("path");
 const config = require("./my.config");
 const util = require("./server/util");
 
-const hostname = os.networkInterfaces();
+
+
+const hostname = ip.address();
 const port = config.serverFile.port;
 const dirProject = config.serverFile.dirProject;
 global.__basedir = __dirname;
