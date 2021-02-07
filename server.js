@@ -5,8 +5,7 @@ const history = require('connect-history-api-fallback');
 const path = require("path");
 const config = require("./my.config");
 const util = require("./server/util");
-
-
+const initRoutes = require("./server/routes");
 
 const hostname = ip.address();
 const port = config.serverFile.port;
@@ -21,10 +20,10 @@ util.createUploidDir();
 const corsOptions = {
     origin: `http://${hostname}:${config.client.port}`,
 };
-const initRoutes = require("./server/routes");
-initRoutes(app);
+console.log(corsOptions);
 
 app.use(cors(corsOptions));
+initRoutes(app);
 app.use(express.urlencoded({ extended: true }));
 app.use(history());
 app.use(staticFileMiddleware);
