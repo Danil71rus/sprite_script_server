@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+
+        <!-- Ring shape centred on 100, 100 with inner radius 90px, outer
+             radius 100px and a 12 degree gap at 348. -->
+        <clipPath id="ring-small">
+            <path d="M 8, 16
+                     A 7.9, 7.9, 0, 1, 1, 15.9, 9.2 
+                     L 13.9, 9.2
+                     A 5.9, 5.9, 0, 1, 0, 8, 14 z"/>
+        </clipPath>
+
+        <!-- Very simple Gaussian blur, used to visually merge sectors. -->
+        <filter id="blur-small" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+
+        <!-- A 12 degree sector extending to 150px. -->
+        <path id="p-small" d="M 8, 20
+                        A 12, 12, 0, 0, 1, 12.251, 20
+                        L 8, 8
+                        A 0, 0, 0, 0, 0, 8, 8 z" fill="currentColor"/>
+    </defs>
+
+    <!-- Clip the blurred sectors to the ring shape. -->
+    <g clip-path="url(#ring-small)" fill="none" fill-rule="evenodd">
+
+        <!-- Blur the sectors together to make a smooth shape and rotate
+             them anti-clockwise by 6 degrees to hide the seam where the
+             fully opaque sector blurs with the fully transparent one. -->
+        <g filter="url(#blur-small)" transform="rotate(6 8 8)">
+
+            <!-- Each successive sector increases in opacity and is rotated
+                 by a further 12 degrees. -->
+            <use xlink:href="#p-small" fill-opacity="0"      transform="rotate(  0 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0"  	   transform="rotate( 12 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0"      transform="rotate( 24 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0"      transform="rotate( 36 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.01"   transform="rotate( 48 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.06"   transform="rotate( 60 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.09"   transform="rotate( 72 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.17"   transform="rotate( 84 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.2380" transform="rotate( 96 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.2856" transform="rotate(108 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.3332" transform="rotate(120 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.3808" transform="rotate(132 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.4284" transform="rotate(144 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.4760" transform="rotate(156 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.5236" transform="rotate(168 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.5712" transform="rotate(180 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.6188" transform="rotate(192 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.6664" transform="rotate(204 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.7140" transform="rotate(216 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.7616" transform="rotate(228 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.8092" transform="rotate(240 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.8568" transform="rotate(252 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.9044" transform="rotate(264 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="0.9520" transform="rotate(276 8 8)"/>
+            <use xlink:href="#p-small" fill-opacity="1" 	   transform="rotate(288 8 8)"/>
+        </g>
+    </g>
+</svg>

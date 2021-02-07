@@ -1,0 +1,28 @@
+{
+  "name": "sprite_script_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.2",
+    "axios": "^0.21.1",
+    "connect-history-api-fallback": "^1.6.0",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "multer": "^1.4.2",
+    "sharp": "^0.26.3",
+    "vue": "^2.6.11",
+    "vue-axios": "^3.2.2",
+    "vue-class-component": "^7.2.3",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "author": "Stepin Danil",
+  "license": "ISC"
+}

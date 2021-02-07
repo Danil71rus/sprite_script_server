@@ -1,0 +1,11 @@
+version: "3"
+
+#volumes:
+#  config_volume:
+
+services:
+  upload_files:
+    build: ./
+    restart: always
+    ports:
+    - 3000:3000
